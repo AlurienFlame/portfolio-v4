@@ -1,0 +1,32 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects .filters {
+    font-size: small;
+    background: var(--color_card);
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.projects .filter-by {
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.projects .filter-list {
+    display: flex;
+    justify-content: center;
+}
+
+.projects .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    max-width: 80rem;
+    margin: auto;
+}

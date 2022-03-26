@@ -1,0 +1,18 @@
+.tag {
+    background: var(--color_tag);
+    width: fit-content;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tag:hover {
+    background: var(--color_tag_hover);
+}
+
+.tag.selected {
+    background: var(--color_tag_selected);
+}
