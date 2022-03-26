@@ -17,7 +17,7 @@ class Card extends React.Component {
         // Fetch download count then update state
         if (this.props.idSteam) {
             // Steam API doesn't allow requests from clients so we need to make the server do it
-            fetch(`../../../api/steam.php?id=${this.props.idSteam}`)
+            fetch(`/api/steam?id=${this.props.idSteam}`)
                 .then((response) => response.json())
                 .then((data) => {
                     this.setState({ downloadsSteam: data.lifetime_subscriptions });
@@ -47,7 +47,7 @@ class Card extends React.Component {
         }
 
         if (this.props.idTML) {
-            fetch(`../../../api/tml.php?id=${this.props.idTML}`)
+            fetch(`/api/tml?id=${this.props.idTML}`)
                 .then((response) => response.json())
                 .then((data) => {
                     this.setState({ downloadsTML: data.downloads });
