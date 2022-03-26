@@ -20,7 +20,7 @@ class Card extends React.Component {
             fetch(`/api/steam?id=${this.props.idSteam}`)
                 .then((response) => response.json())
                 .then((data) => {
-                    this.setState({ downloadsSteam: data.lifetime_subscriptions });
+                    this.setState({ downloadsSteam: data.response.publishedfiledetails[0].lifetime_subscriptions });
                 })
                 .catch((error) => {
                     this.setState({ downloadsSteam: error.toString() });
