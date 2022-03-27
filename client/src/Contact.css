@@ -1,0 +1,13 @@
+.contact {
+    background: var(--color_background_light);
+    padding: 1.5rem;
+}
+
+.contact > h2 {
+    margin: 0rem 0rem 0.75rem;
+}
+
+.email {
+    font-style: normal;
+    font-size: 1rem;
+}

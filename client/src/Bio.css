@@ -3,3 +3,11 @@
     padding: 1rem;
     margin: auto;
 }
+
+.bio > h1 {
+    margin: 0.5rem;
+}
+
+.bio > p {
+    font-size: 1.2rem;
+}

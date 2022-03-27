@@ -26,7 +26,7 @@ class Projects extends React.Component {
     render() {
         return (
             <div className="projects">
-                <h3>My projects</h3>
+                <h2>My projects</h2>
                 <div className="filters">
                     <div className="filter-by">Filter by:</div>
                     <div className="filter-list">
