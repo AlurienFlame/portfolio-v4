@@ -10,12 +10,6 @@ h2 {
     margin: 0;
 }
 
-.bio {
-    background: var(--color_background_light);
-    padding: 1rem;
-    margin: 0rem 0px 1rem;
-}
-
 a {
     color: var(--color_link);
     text-decoration: none;

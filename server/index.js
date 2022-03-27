@@ -26,7 +26,7 @@ app.get("/api/steam", (req, res) => {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Recieved data from Steam API on id", req.query.id);
+            // console.log("Recieved data from Steam API on id", req.query.id);
             res.json(data);
         })
         .catch((error) => {
@@ -40,7 +40,7 @@ app.get("/api/tml", (req, res) => {
     fetch(`http://javid.ddns.net/tModLoader/tools/modinfo.php?modname=${req.query.id}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log("Recieved data from TML API on id", req.query.id);
+            // console.log("Recieved data from TML API on id", req.query.id);
             res.json(data);
         })
         .catch((error) => {
