@@ -4,7 +4,6 @@ import Card from "./Card.jsx";
 import Tag from "./Tag.jsx";
 
 class Projects extends React.Component {
-  // TODO: State - filters toggled
   constructor(props) {
     super(props);
     this.state = {

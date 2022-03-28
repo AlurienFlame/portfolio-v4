@@ -1,16 +1,18 @@
 body {
-    margin: 0;
-    font-family: "Rubik", sans-serif;
-    background: var(--color_background);
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background: var(--color_background);
 
-    --color_shadow: #181818;
-    --color_background: #222;
-    --color_background_light: #333;
-    --color_card: #303030;
-    --color_tag: #444;
-    --color_tag_hover: #555;
-    --color_tag_selected: #666;
-    --color_text: #fff;
-    --color_link: lightskyblue;
-    --color_highlight: #f36eff;
+  --color_shadow: #181818;
+  --color_background: #222;
+  --color_background_light: #333;
+  --color_card: #303030;
+  --color_tag: #444;
+  --color_tag_hover: #555;
+  --color_tag_selected: #666;
+  --color_text: #fff;
+  --color_link: lightskyblue;
+  --color_highlight: #f36eff;
+  --color_button: #666;
+  --color_button_hover: #777;
 }
