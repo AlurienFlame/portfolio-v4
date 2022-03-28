@@ -1,0 +1,126 @@
+[
+  {
+    "title": "Starflower",
+    "description": "A Terraria mod that adds an herb and a few potions.",
+    "icon": "starflower.png",
+    "github": "Starflower",
+    "distributions": {
+      "tml": {
+        "platform": "tml",
+        "id": "Starflower",
+        "link": "https://mirror.sgkoi.dev/Mods/Details/Starflower"
+      }
+    },
+    "tags": ["C#"]
+  },
+  {
+    "title": "Chat Sounds",
+    "description": "A Minecraft mod that adds sound effects to the chat.",
+    "icon": "chatsounds.png",
+    "github": "Chatsounds",
+    "distributions": {
+      "curseforge": {
+        "platform": "curseforge",
+        "id": "459715-chat-sounds",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/chat-sounds"
+      },
+      "modrinth": {
+        "platform": "modrinth",
+        "id": "chatsounds",
+        "link": "https://modrinth.com/mod/chatsounds"
+      }
+    },
+    "tags": ["Java"]
+  },
+  {
+    "title": "Honeycomb",
+    "description": "An interactive demonstration of the A* pathfinding algorithm applied to a hexagonal grid system.",
+    "icon": "honeycomb.png",
+    "github": "Honeycomb",
+    "link": "https://mirror.sgkoi.dev/Mods/Details/Starflower",
+    "tags": ["JavaScript"]
+  },
+  {
+    "title": "Soviet Menu Music",
+    "description": "A Don't Starve Together mod that replaces the menu music with the Soviet anthem.",
+    "icon": "sovietmenumusic.png",
+    "distributions": {
+      "steam": {
+        "platform": "steam",
+        "id": "1708499402",
+        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1708499402"
+      }
+    },
+    "tags": ["LUA"]
+  },
+  {
+    "title": "Torchkey",
+    "description": "A Minecraft mod that adds a hotkey for placing torches.",
+    "icon": "torchkey.png",
+    "github": "Torchkey",
+    "distributions": {
+      "curseforge": {
+        "platform": "curseforge",
+        "id": "392380-torchkey",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey"
+      },
+      "modrinth": {
+        "platform": "modrinth",
+        "id": "torchkey",
+        "link": "https://modrinth.com/mod/torchkey"
+      }
+    },
+    "tags": ["Java"]
+  },
+  {
+    "title": "Balanced Recall",
+    "description": "A Minecraft mod that adds a couple handy items.",
+    "icon": "balancedrecall.png",
+    "github": "Balanced-Recall",
+    "distributions": {
+      "curseforge": {
+        "platform": "curseforge",
+        "id": "520624-balanced-recall",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall"
+      },
+      "modrinth": {
+        "platform": "modrinth",
+        "id": "balancedrecall",
+        "link": "https://modrinth.com/mod/balancedrecall"
+      }
+    },
+    "tags": ["Java"]
+  },
+  {
+    "title": "Fireman",
+    "description": "A Minecraft mod that adds a hotkey for putting out fires.",
+    "icon": "fireman.png",
+    "github": "Fireman",
+    "distributions": {
+      "curseforge": {
+        "platform": "curseforge",
+        "id": "518097-fireman",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/fireman"
+      },
+      "modrinth": {
+        "platform": "modrinth",
+        "id": "fireman",
+        "link": "https://modrinth.com/mod/fireman"
+      }
+    },
+    "tags": ["Java"]
+  },
+  {
+    "title": "Disease Warning",
+    "description": "A Don't Starve Together mod that adds an alert sound for disease.",
+    "icon": "diseasewarning.png",
+    "distributions": {
+      "steam": {
+        "platform": "steam",
+        "id": "1848223570",
+        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1848223570"
+      }
+    },
+    "tags": ["LUA"]
+  }
+]
