@@ -4,6 +4,7 @@ import Tag from "./Tag.jsx";
 
 class Card extends React.Component {
   render() {
+    // TODO: Cards should have a "more info" or "try me" button that brings up a popup listing relavant links
     return (
       <div className={`card${this.shouldShowCard() ? "" : " display-none"}`}>
         <img src={"./images/" + this.props.icon} alt="card icon" />
@@ -37,25 +38,21 @@ class Card extends React.Component {
     if (this.props.distributions.tml) {
       return (
         <p>
-          Downloads ({this.linkIfExists(this.props.distributions.tml.link, "TModLoader")}):{" "}
-          <b>{this.props.distributions.tml.downloads || "Loading..."}</b>
+          Downloads: <b>{this.props.distributions.tml.downloads || "Loading..."}</b>
         </p>
       );
     }
     if (this.props.distributions.steam) {
       return (
         <p>
-          Downloads ({this.linkIfExists(this.props.distributions.steam.link, "Steam")}):{" "}
-          <b>{this.props.distributions.steam.downloads || "Loading..."}</b>
+          Downloads: <b>{this.props.distributions.steam.downloads || "Loading..."}</b>
         </p>
       );
     }
     if (this.props.distributions.curseforge || this.props.distributions.modrinth) {
       return (
         <p>
-          Downloads ({this.linkIfExists(this.props.distributions.curseforge.link, "Curse")},{" "}
-          {this.linkIfExists(this.props.distributions.modrinth.link, "Modrinth")}):{" "}
-          <b>{this.props.distributions.curseforge.downloads + this.props.distributions.modrinth.downloads || "Loading..."}</b>
+          Downloads: <b>{this.props.distributions.curseforge.downloads + this.props.distributions.modrinth.downloads || "Loading..."}</b>
         </p>
       );
     }

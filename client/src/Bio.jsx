@@ -8,7 +8,7 @@ class Bio extends React.Component {
         <h1>Lucien Lasseau</h1>
         <p>I'm an aspiring software developer studying at Stanford University. I love using code to bring ideas to life.</p>
         <p>
-          My published projects have <b className="downloads">{this.sumDownloads().toLocaleString('en-US')}</b> downloads between them.
+          My published projects have <b className="highlighted">{this.sumDownloads().toLocaleString('en-US')}</b> downloads between them.
         </p>
         <a href="https://github.com/AlurienFlame">GitHub</a>
       </div>

@@ -12,7 +12,6 @@
     font-size: 1.2rem;
 }
 
-.downloads {
-    color: var(--color_highlight);
+.bio > p > b {
     font-size: 1.4rem;
 }
