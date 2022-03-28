@@ -12,27 +12,28 @@ class App extends React.Component {
       projects
     };
   }
+
   componentDidMount() {
     // Fetch download counts
+    // TODO: Move onto the server and cache
     for (let project of this.state.projects) {
       if (!project.distributions) continue;
-      for (let distribution of Object.values(project.distributions)) {
-        switch (distribution.platform) {
+      for (let distribution in project.distributions) {
+        switch (distribution) {
           case "tml":
-            this.fetchTmlData(distribution);
+            this.fetchTmlData(project.distributions[distribution]);
             break;
           case "steam":
-            this.fetchSteamData(distribution);
+            this.fetchSteamData(project.distributions[distribution]);
             break;
           case "curseforge":
-            this.fetchCurseforgeData(distribution);
+            this.fetchCurseforgeData(project.distributions[distribution]);
             break;
           case "modrinth":
-            this.fetchModrinthData(distribution);
+            this.fetchModrinthData(project.distributions[distribution]);
             break;
-
           default:
-            console.warn("Unsupported distribution platform:", distribution.platform);
+            console.warn("Unsupported distribution platform:", distribution);
             break;
         }
       }
@@ -42,7 +43,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Bio />
+        <Bio projects={projects} />
         {/* TODO: Demos */}
         <Projects projects={projects} />
         <Contact />

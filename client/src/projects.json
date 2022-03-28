@@ -6,7 +6,6 @@
     "github": "Starflower",
     "distributions": {
       "tml": {
-        "platform": "tml",
         "id": "Starflower",
         "link": "https://mirror.sgkoi.dev/Mods/Details/Starflower"
       }
@@ -25,7 +24,6 @@
         "link": "https://www.curseforge.com/minecraft/mc-mods/chat-sounds"
       },
       "modrinth": {
-        "platform": "modrinth",
         "id": "chatsounds",
         "link": "https://modrinth.com/mod/chatsounds"
       }
@@ -46,7 +44,6 @@
     "icon": "sovietmenumusic.png",
     "distributions": {
       "steam": {
-        "platform": "steam",
         "id": "1708499402",
         "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1708499402"
       }
@@ -60,12 +57,10 @@
     "github": "Torchkey",
     "distributions": {
       "curseforge": {
-        "platform": "curseforge",
         "id": "392380-torchkey",
         "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey"
       },
       "modrinth": {
-        "platform": "modrinth",
         "id": "torchkey",
         "link": "https://modrinth.com/mod/torchkey"
       }
@@ -79,12 +74,10 @@
     "github": "Balanced-Recall",
     "distributions": {
       "curseforge": {
-        "platform": "curseforge",
         "id": "520624-balanced-recall",
         "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall"
       },
       "modrinth": {
-        "platform": "modrinth",
         "id": "balancedrecall",
         "link": "https://modrinth.com/mod/balancedrecall"
       }
@@ -98,12 +91,10 @@
     "github": "Fireman",
     "distributions": {
       "curseforge": {
-        "platform": "curseforge",
         "id": "518097-fireman",
         "link": "https://www.curseforge.com/minecraft/mc-mods/fireman"
       },
       "modrinth": {
-        "platform": "modrinth",
         "id": "fireman",
         "link": "https://modrinth.com/mod/fireman"
       }
@@ -116,7 +107,6 @@
     "icon": "diseasewarning.png",
     "distributions": {
       "steam": {
-        "platform": "steam",
         "id": "1848223570",
         "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1848223570"
       }

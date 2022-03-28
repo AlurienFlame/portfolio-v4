@@ -11,3 +11,8 @@
 .bio > p {
     font-size: 1.2rem;
 }
+
+.downloads {
+    color: var(--color_highlight);
+    font-size: 1.4rem;
+}

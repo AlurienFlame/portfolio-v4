@@ -3,10 +3,6 @@ import "./Card.css";
 import Tag from "./Tag.jsx";
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className={`card${this.shouldShowCard() ? "" : " display-none"}`}>
@@ -41,14 +37,16 @@ class Card extends React.Component {
     if (this.props.distributions.tml) {
       return (
         <p>
-          Downloads ({this.linkIfExists(this.props.distributions.tml.link, "TModLoader")}): <b>{this.props.distributions.tml.downloads || "Loading..."}</b>
+          Downloads ({this.linkIfExists(this.props.distributions.tml.link, "TModLoader")}):{" "}
+          <b>{this.props.distributions.tml.downloads || "Loading..."}</b>
         </p>
       );
     }
     if (this.props.distributions.steam) {
       return (
         <p>
-          Downloads ({this.linkIfExists(this.props.distributions.steam.link, "Steam")}): <b>{this.props.distributions.steam.downloads || "Loading..."}</b>
+          Downloads ({this.linkIfExists(this.props.distributions.steam.link, "Steam")}):{" "}
+          <b>{this.props.distributions.steam.downloads || "Loading..."}</b>
         </p>
       );
     }
