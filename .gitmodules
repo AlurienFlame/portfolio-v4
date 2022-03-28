@@ -1,0 +1,3 @@
+[submodule "projects/honeycomb"]
+	path = projects/honeycomb
+	url = https://github.com/AlurienFlame/Honeycomb

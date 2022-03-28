@@ -7,6 +7,8 @@ const app = express();
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
+app.use("/projects", express.static(path.resolve(__dirname, "../projects")))
+
 app.get("/api/steam", (req, res) => {
 
     // Construct form
@@ -47,12 +49,6 @@ app.get("/api/tml", (req, res) => {
             console.log(error);
             res.send(error);
         });
-});
-
-// All other GET requests not handled before will return our React app
-app.get("*", (req, res) => {
-    console.log("Unhandled GET request passing to React app:", req.url);
-    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 app.listen(PORT, () => {
