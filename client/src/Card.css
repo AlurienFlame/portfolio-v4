@@ -32,6 +32,14 @@
   margin: 0.5rem;
 }
 
+.card > .description {
+  margin-bottom: auto;
+}
+
+.card > .downloads {
+  margin-bottom: 0.25rem;
+}
+
 .links {
   display: flex;
   flex-direction: row;

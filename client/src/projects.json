@@ -32,7 +32,7 @@
   },
   {
     "title": "Honeycomb",
-    "description": "An interactive demonstration of the A* pathfinding algorithm applied to a hexagonal grid system.",
+    "description": "An interactive demonstration of the A* pathfinding algorithm on a hexagonal grid.",
     "icon": "honeycomb.png",
     "github": "Honeycomb",
     "link": "./projects/honeycomb",
@@ -40,7 +40,7 @@
   },
   {
     "title": "Soviet Menu Music",
-    "description": "A Don't Starve Together mod that replaces the menu music with the Soviet anthem.",
+    "description": "A Don't Starve Together mod that replaces an audio asset.",
     "icon": "sovietmenumusic.png",
     "distributions": {
       "steam": {
