@@ -18,14 +18,14 @@
     "icon": "chatsounds.png",
     "github": "Chatsounds",
     "distributions": {
+      "modrinth": {
+        "id": "chatsounds",
+        "link": "https://modrinth.com/mod/chatsounds"
+      },
       "curseforge": {
         "platform": "curseforge",
         "id": "459715-chat-sounds",
         "link": "https://www.curseforge.com/minecraft/mc-mods/chat-sounds"
-      },
-      "modrinth": {
-        "id": "chatsounds",
-        "link": "https://modrinth.com/mod/chatsounds"
       }
     },
     "tags": ["Java"]
@@ -56,13 +56,13 @@
     "icon": "torchkey.png",
     "github": "Torchkey",
     "distributions": {
-      "curseforge": {
-        "id": "392380-torchkey",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey"
-      },
       "modrinth": {
         "id": "torchkey",
         "link": "https://modrinth.com/mod/torchkey"
+      },
+      "curseforge": {
+        "id": "392380-torchkey",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey"
       }
     },
     "tags": ["Java"]
@@ -73,13 +73,13 @@
     "icon": "balancedrecall.png",
     "github": "Balanced-Recall",
     "distributions": {
-      "curseforge": {
-        "id": "520624-balanced-recall",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall"
-      },
       "modrinth": {
         "id": "balancedrecall",
         "link": "https://modrinth.com/mod/balancedrecall"
+      },
+      "curseforge": {
+        "id": "520624-balanced-recall",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall"
       }
     },
     "tags": ["Java"]
@@ -90,13 +90,13 @@
     "icon": "fireman.png",
     "github": "Fireman",
     "distributions": {
-      "curseforge": {
-        "id": "518097-fireman",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/fireman"
-      },
       "modrinth": {
         "id": "fireman",
         "link": "https://modrinth.com/mod/fireman"
+      },
+      "curseforge": {
+        "id": "518097-fireman",
+        "link": "https://www.curseforge.com/minecraft/mc-mods/fireman"
       }
     },
     "tags": ["Java"]

@@ -44,13 +44,8 @@ class Card extends React.Component {
             <button
               type="button"
               onClick={() => {
+                // TODO: Show more info page that explains distributions and contains more detailed description
                 window.open(this.props.distributions[Object.keys(this.props.distributions)[0]].link);
-                if (Object.keys(this.props.distributions).length > 1) {
-                  // TODO: popup for multiple distributors
-                  console.log("TODO: Multiple distributors");
-                } else {
-                  console.log("Open single window");
-                }
               }}
             >
               <svg className="logo" viewBox="0 0 460 460">
