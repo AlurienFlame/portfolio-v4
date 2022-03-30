@@ -76,6 +76,7 @@ class Card extends React.Component {
 
   getDownloadCount() {
     if (!this.props.distributions) return;
+    // TODO: Hide if there's an error fetching data.
     if (this.props.distributions.tml) {
       return (
         <p className="downloads">

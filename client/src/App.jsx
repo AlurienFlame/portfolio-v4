@@ -59,7 +59,8 @@ class App extends React.Component {
         distribution.downloads = data.response.publishedfiledetails[0].lifetime_subscriptions;
       })
       .catch((error) => {
-        distribution.downloads = error.toString();
+        distribution.downloads = "network error";
+        console.warn("Network error connecting to Steam API:", error);
       });
     this.forceUpdate();
   }
@@ -71,7 +72,8 @@ class App extends React.Component {
         distribution.downloads = data.downloads.total;
       })
       .catch((error) => {
-        distribution.downloads = error.toString();
+        distribution.downloads = "network error";
+        console.warn("Network error connecting to CurseForge API:", error);
       });
     this.forceUpdate();
   }
@@ -83,7 +85,8 @@ class App extends React.Component {
         distribution.downloads = data.downloads;
       })
       .catch((error) => {
-        distribution.downloads = error.toString();
+        distribution.downloads = "network error";
+        console.warn("Network error connecting to Modrinth API:", error);
       });
     this.forceUpdate();
   }
@@ -95,7 +98,8 @@ class App extends React.Component {
         distribution.downloads = data.downloads;
       })
       .catch((error) => {
-        distribution.downloads = error.toString();
+        distribution.downloads = "network error";
+        console.warn("Network error connecting to TML API:", error);
       });
     this.forceUpdate();
   }

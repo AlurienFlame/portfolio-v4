@@ -8,7 +8,7 @@ class Bio extends React.Component {
         <h1>Lucien Lasseau</h1>
         <p>I'm an aspiring software developer studying at Stanford University. I love using code to bring ideas to life.</p>
         <p>
-          My published projects have <b className="highlighted">{this.sumDownloads().toLocaleString('en-US')}</b> downloads between them.
+          My published projects have <b className="highlighted">{this.sumDownloads().toLocaleString("en-US")}</b> downloads between them.
         </p>
         <a href="https://github.com/AlurienFlame">GitHub</a>
       </div>
@@ -20,7 +20,9 @@ class Bio extends React.Component {
     for (let project of this.props.projects) {
       if (!project.distributions) continue;
       for (let distribution in project.distributions) {
-        total += project.distributions[distribution].downloads || 0;
+        let dlcount = project.distributions[distribution].downloads;
+        // TODO: Cache dls to be delivered with client so server errors don't cut into this number
+        if (!isNaN(dlcount)) total += project.distributions[distribution].downloads || 0;
       }
     }
     return total;
