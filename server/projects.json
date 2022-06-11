@@ -4,12 +4,7 @@
     "description": "A Terraria mod that adds an herb and a few potions.",
     "icon": "starflower.png",
     "github": "Starflower",
-    "distributions": {
-      "tml": {
-        "id": "Starflower",
-        "link": "https://mirror.sgkoi.dev/Mods/Details/Starflower"
-      }
-    },
+    "distributions": { "tml": { "id": "Starflower", "link": "https://mirror.sgkoi.dev/Mods/Details/Starflower", "downloads": 3180 } },
     "tags": ["C#"]
   },
   {
@@ -18,14 +13,12 @@
     "icon": "chatsounds.png",
     "github": "Chatsounds",
     "distributions": {
-      "modrinth": {
-        "id": "chatsounds",
-        "link": "https://modrinth.com/mod/chatsounds"
-      },
+      "modrinth": { "id": "chatsounds", "link": "https://modrinth.com/mod/chatsounds", "downloads": 389 },
       "curseforge": {
         "platform": "curseforge",
         "id": "459715-chat-sounds",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/chat-sounds"
+        "link": "https://www.curseforge.com/minecraft/mc-mods/chat-sounds",
+        "downloads": 11101
       }
     },
     "tags": ["Java"]
@@ -43,10 +36,7 @@
     "description": "A Don't Starve Together mod that replaces an audio asset.",
     "icon": "sovietmenumusic.png",
     "distributions": {
-      "steam": {
-        "id": "1708499402",
-        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1708499402"
-      }
+      "steam": { "id": "1708499402", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1708499402", "downloads": 4143 }
     },
     "tags": ["LUA"]
   },
@@ -56,14 +46,8 @@
     "icon": "torchkey.png",
     "github": "Torchkey",
     "distributions": {
-      "modrinth": {
-        "id": "torchkey",
-        "link": "https://modrinth.com/mod/torchkey"
-      },
-      "curseforge": {
-        "id": "392380-torchkey",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey"
-      }
+      "modrinth": { "id": "torchkey", "link": "https://modrinth.com/mod/torchkey", "downloads": 162 },
+      "curseforge": { "id": "392380-torchkey", "link": "https://www.curseforge.com/minecraft/mc-mods/torchkey", "downloads": 2309 }
     },
     "tags": ["Java"]
   },
@@ -73,13 +57,11 @@
     "icon": "balancedrecall.png",
     "github": "Balanced-Recall",
     "distributions": {
-      "modrinth": {
-        "id": "balancedrecall",
-        "link": "https://modrinth.com/mod/balancedrecall"
-      },
+      "modrinth": { "id": "balancedrecall", "link": "https://modrinth.com/mod/balancedrecall", "downloads": 19 },
       "curseforge": {
         "id": "520624-balanced-recall",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall"
+        "link": "https://www.curseforge.com/minecraft/mc-mods/balanced-recall",
+        "downloads": 6585
       }
     },
     "tags": ["Java"]
@@ -90,14 +72,8 @@
     "icon": "fireman.png",
     "github": "Fireman",
     "distributions": {
-      "modrinth": {
-        "id": "fireman",
-        "link": "https://modrinth.com/mod/fireman"
-      },
-      "curseforge": {
-        "id": "518097-fireman",
-        "link": "https://www.curseforge.com/minecraft/mc-mods/fireman"
-      }
+      "modrinth": { "id": "fireman", "link": "https://modrinth.com/mod/fireman", "downloads": 60 },
+      "curseforge": { "id": "518097-fireman", "link": "https://www.curseforge.com/minecraft/mc-mods/fireman", "downloads": 126 }
     },
     "tags": ["Java"]
   },
@@ -106,10 +82,7 @@
     "description": "A Don't Starve Together mod that adds an alert sound for disease.",
     "icon": "diseasewarning.png",
     "distributions": {
-      "steam": {
-        "id": "1848223570",
-        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1848223570"
-      }
+      "steam": { "id": "1848223570", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1848223570", "downloads": 1140 }
     },
     "tags": ["LUA"]
   }
