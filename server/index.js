@@ -42,7 +42,6 @@ app.get("/api/projects", (req, res) => {
     }
   }
 
-  // TODO after promises resolve, distribution.downloads = download count
   Promise.all(promises).then((_) => {
     res.status(200).json(projects);
     fs.writeFileSync("./projects.json", JSON.stringify(projects));
