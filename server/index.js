@@ -14,7 +14,7 @@ app.use("/projects", express.static(path.resolve(__dirname, "../projects")));
 app.get("/api/projects", (req, res) => {
   try {
     // Load in projects.json
-    let projects = JSON.parse(fs.readFileSync("projects.json", "utf8"));
+    let projects = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./projects.json")));
 
     // First, deliver all the cached data
     res.status(200).write(JSON.stringify(projects));
@@ -51,7 +51,7 @@ app.get("/api/projects", (req, res) => {
     Promise.all(promises).then((_) => {
       fs.writeFileSync("./projects.json", JSON.stringify(projects));
       res.write(JSON.stringify(projects));
-      res.end();
+      return res.end();
     });
 
     // TODO: Some form of timeout checking
@@ -59,7 +59,7 @@ app.get("/api/projects", (req, res) => {
     // to allow the promises to resolve
   } catch (error) {
     console.warn("Error handling GET request to /api/projects", error);
-    res.sendStatus(500).send(error);
+    return res.sendStatus(500).send(error);
   }
 });
 
