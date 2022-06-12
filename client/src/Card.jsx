@@ -77,27 +77,21 @@ class Card extends React.Component {
   getDownloadCount() {
     if (!this.props.distributions) return;
     // TODO: Hide if there's an error fetching data.
+    let totalDownloads = 0;
     if (this.props.distributions.tml) {
-      return (
-        <p className="downloads">
-          Downloads: <b>{this.props.distributions.tml.downloads || "Loading..."}</b>
-        </p>
-      );
+      totalDownloads += this.props.distributions.tml.downloads;
     }
     if (this.props.distributions.steam) {
-      return (
-        <p className="downloads">
-          Downloads: <b>{this.props.distributions.steam.downloads || "Loading..."}</b>
-        </p>
-      );
+      totalDownloads += this.props.distributions.steam.downloads;
     }
-    if (this.props.distributions.curseforge || this.props.distributions.modrinth) {
-      return (
-        <p className="downloads">
-          Downloads: <b>{this.props.distributions.curseforge.downloads + this.props.distributions.modrinth.downloads || "Loading..."}</b>
-        </p>
-      );
+    if (this.props.distributions.curseforge) {
+      totalDownloads += this.props.distributions.curseforge.downloads;
     }
+    if (this.props.distributions.modrinth) {
+      totalDownloads += this.props.distributions.modrinth.downloads;
+    }
+    // TODO: Maybe see about tracking downloads from github releases?
+    return <p className="downloads">Downloads: <b>{totalDownloads || "Loading..."}</b></p>;
   }
 
   getTags() {
