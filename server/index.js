@@ -12,50 +12,55 @@ app.use("/projects", express.static(path.resolve(__dirname, "../projects")));
 
 // Grab download counts from each api
 app.get("/api/projects", (req, res) => {
-  // Load in projects.json
-  let projects = JSON.parse(fs.readFileSync("projects.json", "utf8"));
+  try {
+    // Load in projects.json
+    let projects = JSON.parse(fs.readFileSync("projects.json", "utf8"));
 
-  // First, deliver all the cached data
-  res.status(200).write(JSON.stringify(projects));
+    // First, deliver all the cached data
+    res.status(200).write(JSON.stringify(projects));
 
-  let promises = [];
+    let promises = [];
 
-  // Set each distribution's download count with data from each api
-  for (let project of projects) {
-    if (!project.distributions) continue;
-    for (let distributor in project.distributions) {
-      let distribution = project.distributions[distributor];
-      // Can't generalize this because each distributor has different API
-      switch (distributor) {
-        case "tml":
-          promises.push(fetchTmlData(distribution));
-          break;
-        case "steam":
-          promises.push(fetchSteamData(distribution));
-          break;
-        case "curseforge":
-          promises.push(fetchCurseforgeData(distribution));
-          break;
-        case "modrinth":
-          promises.push(fetchModrinthData(distribution));
-          break;
-        default:
-          console.warn("Unsupported distribution platform:", distributor);
-          break;
+    // Set each distribution's download count with data from each api
+    for (let project of projects) {
+      if (!project.distributions) continue;
+      for (let distributor in project.distributions) {
+        let distribution = project.distributions[distributor];
+        // Can't generalize this because each distributor has different API
+        switch (distributor) {
+          case "tml":
+            promises.push(fetchTmlData(distribution));
+            break;
+          case "steam":
+            promises.push(fetchSteamData(distribution));
+            break;
+          case "curseforge":
+            promises.push(fetchCurseforgeData(distribution));
+            break;
+          case "modrinth":
+            promises.push(fetchModrinthData(distribution));
+            break;
+          default:
+            console.warn("Unsupported distribution platform:", distributor);
+            break;
+        }
       }
     }
+
+    // Once all changes have been made, send the new data and update the cache.
+    Promise.all(promises).then((_) => {
+      fs.writeFileSync("./projects.json", JSON.stringify(projects));
+      res.write(JSON.stringify(projects));
+      res.end();
+    });
+
+    // TODO: Some form of timeout checking
+    // Each request should probably timeout individually
+    // to allow the promises to resolve
+  } catch (error) {
+    console.warn("Error handling GET request to /api/projects", error);
+    res.sendStatus(500).send(error);
   }
-
-  // Once all changes have been made, send the new data and update the cache.
-  Promise.all(promises).then((_) => {
-    fs.writeFileSync("./projects.json", JSON.stringify(projects));
-    res.write(JSON.stringify(projects));
-    res.end();
-  });
-
-  // TODO: Some form of timeout checking
-  // Each request should probably timeout individually
-  // to allow the promises to resolve
 });
 
 async function fetchSteamData(distribution) {
