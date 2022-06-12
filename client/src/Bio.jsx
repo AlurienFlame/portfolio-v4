@@ -21,7 +21,6 @@ class Bio extends React.Component {
       if (!project.distributions) continue;
       for (let distribution in project.distributions) {
         let dlcount = project.distributions[distribution].downloads;
-        // TODO: Cache dls to be delivered with client so server errors don't cut into this number
         if (!isNaN(dlcount)) total += project.distributions[distribution].downloads || 0;
       }
     }

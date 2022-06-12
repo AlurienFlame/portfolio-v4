@@ -28,16 +28,16 @@ app.get("/api/projects", (req, res) => {
       // Can't generalize this because each distributor has different API
       switch (distributor) {
         case "tml":
-          promises.push(fetchTmlData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
+          promises.push(fetchTmlData(distribution));
           break;
         case "steam":
-          promises.push(fetchSteamData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
+          promises.push(fetchSteamData(distribution));
           break;
         case "curseforge":
-          promises.push(fetchCurseforgeData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
+          promises.push(fetchCurseforgeData(distribution));
           break;
         case "modrinth":
-          promises.push(fetchModrinthData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
+          promises.push(fetchModrinthData(distribution));
           break;
         default:
           console.warn("Unsupported distribution platform:", distributor);
@@ -46,9 +46,10 @@ app.get("/api/projects", (req, res) => {
     }
   }
 
-  // Once all changes have been made, cache the new data and close the stream
+  // Once all changes have been made, send the new data and update the cache.
   Promise.all(promises).then((_) => {
     fs.writeFileSync("./projects.json", JSON.stringify(projects));
+    res.write(JSON.stringify(projects));
     res.end();
   });
 
@@ -76,7 +77,6 @@ async function fetchSteamData(distribution) {
     .then((response) => response.json())
     .then((data) => {
       if (data.response.publishedfiledetails[0].lifetime_subscriptions) {
-        // FIXME: We need to be able to sum together the downloads from multiple distributions
         distribution.downloads = data.response.publishedfiledetails[0].lifetime_subscriptions;
       }
       return;

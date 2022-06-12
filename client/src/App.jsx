@@ -13,18 +13,28 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    let that = this; // hack to get around namespace issues
     fetch("/api/projects")
       .then((response) => response.body)
       .then((body) => {
         // For each chunk of data that gets streamed in:
-        body.getReader().read().then((chunk) => {
+        let reader = body.getReader();
+        reader.read().then(function processData({ done, value }) {
+          if (done) {
+            return;
+          }
           // log the chunk of data as text
-          let text = new TextDecoder("utf-8").decode(chunk.value);
-          // FIXME: Trying to parse multiple JSON objects in one chunk
-          console.log(text)
-          // let json = JSON.parse(text);
+          let text = new TextDecoder("utf-8").decode(value);
+          try {
+            var json = JSON.parse(text);
+          } catch (error) {
+            console.log("Error with JSON parsing:", error);            
+          }
 
-          // this.setState({ projects: json });
+          that.setState({ projects: json });
+
+          // read the next chunk
+          reader.read().then(processData);
         });
       })
       .catch((error) => {
