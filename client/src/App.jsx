@@ -13,7 +13,23 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchProjectData();
+    fetch("/api/projects")
+      .then((response) => response.body)
+      .then((body) => {
+        // For each chunk of data that gets streamed in:
+        body.getReader().read().then((chunk) => {
+          // log the chunk of data as text
+          let text = new TextDecoder("utf-8").decode(chunk.value);
+          // FIXME: Trying to parse multiple JSON objects in one chunk
+          console.log(text)
+          // let json = JSON.parse(text);
+
+          // this.setState({ projects: json });
+        });
+      })
+      .catch((error) => {
+        console.warn("Network error connecting to project data API:", error);
+      });
   }
 
   render() {
@@ -25,17 +41,6 @@ class App extends React.Component {
         <Contact />
       </div>
     );
-  }
-
-  async fetchProjectData() {
-    await fetch("/api/projects")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ projects: data });
-      })
-      .catch((error) => {
-        console.warn("Network error connecting to project data API:", error);
-      });
   }
 }
 

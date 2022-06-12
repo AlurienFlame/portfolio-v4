@@ -15,6 +15,9 @@ app.get("/api/projects", (req, res) => {
   // Load in projects.json
   let projects = JSON.parse(fs.readFileSync("projects.json", "utf8"));
 
+  // First, deliver all the cached data
+  res.status(200).write(JSON.stringify(projects));
+
   let promises = [];
 
   // Set each distribution's download count with data from each api
@@ -22,18 +25,19 @@ app.get("/api/projects", (req, res) => {
     if (!project.distributions) continue;
     for (let distributor in project.distributions) {
       let distribution = project.distributions[distributor];
+      // Can't generalize this because each distributor has different API
       switch (distributor) {
         case "tml":
-          promises.push(fetchTmlData(distribution));
+          promises.push(fetchTmlData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
           break;
         case "steam":
-          promises.push(fetchSteamData(distribution));
+          promises.push(fetchSteamData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
           break;
         case "curseforge":
-          promises.push(fetchCurseforgeData(distribution));
+          promises.push(fetchCurseforgeData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
           break;
         case "modrinth":
-          promises.push(fetchModrinthData(distribution));
+          promises.push(fetchModrinthData(distribution).then((_)=>{res.write(JSON.stringify(projects))}));
           break;
         default:
           console.warn("Unsupported distribution platform:", distributor);
@@ -42,16 +46,15 @@ app.get("/api/projects", (req, res) => {
     }
   }
 
+  // Once all changes have been made, cache the new data and close the stream
   Promise.all(promises).then((_) => {
-    res.status(200).json(projects);
     fs.writeFileSync("./projects.json", JSON.stringify(projects));
-    return;
+    res.end();
   });
 
-  // If promises take too long to resolve, timeout after 5 seconds.
-  setTimeout(() => {
-    return res.status(504).json(projects);
-  }, 5000);
+  // TODO: Some form of timeout checking
+  // Each request should probably timeout individually
+  // to allow the promises to resolve
 });
 
 async function fetchSteamData(distribution) {
@@ -73,6 +76,7 @@ async function fetchSteamData(distribution) {
     .then((response) => response.json())
     .then((data) => {
       if (data.response.publishedfiledetails[0].lifetime_subscriptions) {
+        // FIXME: We need to be able to sum together the downloads from multiple distributions
         distribution.downloads = data.response.publishedfiledetails[0].lifetime_subscriptions;
       }
       return;
