@@ -2,6 +2,7 @@ import React from "react";
 import "./Bio.css";
 
 class Bio extends React.Component {
+  // TODO: tween download count up from zero
   render() {
     return (
       <div className="bio">
