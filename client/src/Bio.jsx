@@ -24,7 +24,7 @@ class Bio extends React.Component {
         if (!isNaN(dlcount)) total += project.distributions[distribution].downloads || 0;
       }
     }
-    return total;
+    return total || "[loading...]";
   }
 }
 

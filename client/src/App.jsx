@@ -27,11 +27,12 @@ class App extends React.Component {
           let text = new TextDecoder("utf-8").decode(value);
           try {
             var json = JSON.parse(text);
+            that.setState({ projects: json });
           } catch (error) {
-            console.log("Error with JSON parsing:", error);            
+            console.warn("Backend sent invalid JSON.");
+            console.log(text);            
           }
 
-          that.setState({ projects: json });
 
           // read the next chunk
           reader.read().then(processData);

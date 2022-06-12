@@ -48,6 +48,7 @@ class Projects extends React.Component {
             })
           }
         </div>
+        {(()=>{return this.props.projects.length === 0 ? <div>Client failed to get project data from backend. I swear this doesn't usually happen.</div>: "";})()}
       </div>
     );
   }
