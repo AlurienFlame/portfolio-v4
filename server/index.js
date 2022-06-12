@@ -14,7 +14,7 @@ app.use("/projects", express.static(path.resolve(__dirname, "../projects")));
 app.get("/api/projects", (req, res) => {
   try {
     // Load in projects.json
-    let projects = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./projets.json")));
+    let projects = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./projects.json")));
 
     // First, deliver all the cached data
     res.status(200).write(JSON.stringify(projects));
